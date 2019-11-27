@@ -42,5 +42,5 @@ def mostrarInfoClientes(self):
             print(Cliente  + str((i+1)) + :  + self.Clientes[i].nombre + ,  + self.Clientes[i].cedula + ,  + str(self.Clientes[i].edad))
          print()
 
-if __name__ == __main__:
+if __name__ == "__main__":
     main()

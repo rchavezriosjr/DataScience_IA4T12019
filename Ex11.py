@@ -1,19 +1,13 @@
-"""Ejercicio 11"""
+import pandas
+def main():
+    info = pandas.read_csv('ejemplo_estudiantes.csv', delimiter = ';', decimal = ",", header = 0, index_col = 0)
+    rows_size, column_size = info.shape
+    cont = 0
+    for i in range(rows_size):
+        for j in range(column_size):
+            if ((info.iloc[i, j])%3) == 0:
+                cont = cont +1 
+    return cont
 
-import pandas as pd
-
-datos_est = pd.read_csv('ejemplo_estudiantes.csv', delimiter = ';', decimal = ",", 
-                        header = 0, index_col = 0)
-datos_est
-def cantidadvalores(datos_est):
-    tam_filas, tam_columnas = datos_est.shape
-    cantidad = 0
-    for indice_fila in range(tam_filas):
-        for indice_columna in range(tam_columnas):
-            if ((datos_est.iloc[indice_fila, indice_columna])%3) == 0:
-                cantidad = cantidad +1
-                
-    return cantidad
-                
-        
-cantidadvalores(datos_est)
+if __name__== "__main__":
+    main()
