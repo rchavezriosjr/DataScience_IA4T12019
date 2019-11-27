@@ -1,14 +1,10 @@
-"""Ejercicio 12  """
-import pandas as pd
-datos_est = pd.read_csv('C:\ejemplo_estudiantes.csv', delimiter = ';', decimal = ",", 
-                        header = 0, index_col = 0)
-datos_est
-def cantidadvalores(datos_est, a,b):
+import pandas
+info = pandas.read_csv('ejemplo_estudiantes.csv', delimiter = ';', decimal = ",", header = 0, index_col = 0)
+def main(info, a, b):
     suma = 0
-    cov1 = datos_est.iloc[:, a]
-    cov2 = datos_est.iloc[:, b]
-        
-    covarianza = df.cov()[cov1.name][cov2.name]
+    cov1 = info.iloc[:, a]
+    cov2 = info.iloc[:, b]
+    covarianza = info.cov()[cov1.name][cov2.name]
     columnas = (cov1.name +" y " +cov2.name)
     correlacion = cov1.corr(cov2)
     
@@ -16,4 +12,5 @@ def cantidadvalores(datos_est, a,b):
     
     return dic
 
-cantidadvalores(datos_est,0,1)
+if __name__== "__main__":
+    main(info,0,1)
